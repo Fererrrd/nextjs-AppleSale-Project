@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import styles from '../navigation/applesalestyle.module.css';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const products = [
   {
@@ -30,7 +31,7 @@ const applesales = () => {
       <Head>
         <title>Apple Sales</title>
       </Head>
-      <header>
+      <header className={styles.header}>
         <h1>Apple Sale</h1>
         <h2>Get 100% off all your purchages</h2>
       </header>
@@ -47,6 +48,11 @@ const applesales = () => {
           />
         ))}
       </main>
+      <section>
+        <Link href="/">
+          <h3>Back to the Home Page</h3>
+        </Link>
+      </section>
     </div>
   );
 };
