@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from '../navigation/applesalestyle.module.css';
+import Head from 'next/head';
 
 const products = [
   {
@@ -26,21 +27,26 @@ const products = [
 const applesales = () => {
   return (
     <div className={styles.container}>
-      <div>
+      <Head>
+        <title>Apple Sales</title>
+      </Head>
+      <header>
         <h1>Apple Sale</h1>
         <h2>Get 100% off all your purchages</h2>
-      </div>
-      {products.map((item) => (
-        <Image
-          key={item.id}
-          className={styles.productimage}
-          src={item.product}
-          width={508}
-          height={472}
-          alt="apple product images"
-          priority={true} // {false} | {true}
-        />
-      ))}
+      </header>
+      <main className={styles.productimage}>
+        {products.map((item) => (
+          <Image
+            key={item.id}
+            style={{ display: 'flex' }}
+            src={item.product}
+            width={508}
+            height={472}
+            alt="apple product images"
+            priority={true} // {false} | {true}
+          />
+        ))}
+      </main>
     </div>
   );
 };

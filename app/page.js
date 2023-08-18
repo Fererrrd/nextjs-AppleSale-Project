@@ -14,6 +14,7 @@ export default function Home() {
         src="/images/apple_product_sale_cover.jpg"
         height={500}
         width={850}
+        priority={true}
         alt="product sale cover"
       />
       <CustomButton
