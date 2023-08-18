@@ -10,17 +10,20 @@ const products = [
     product: '/Images/apple_product_iphone.jpg',
     altname: 'iphone image',
     name: 'Iphone',
+    linkname: 'products/iphone',
   },
   {
     id: 1,
     product: '/Images/apple_product_ipad.jpg',
     name: 'Iphone',
+    linkname: 'products/ipad',
     altname: 'ipad image',
   },
   {
     id: 2,
     product: '/Images/apple_product_macbook.jpg',
     name: 'Iphone',
+    linkname: 'products/macbook',
     altname: 'macbook image',
   },
 ];
@@ -37,15 +40,17 @@ const applesales = () => {
       </header>
       <main className={styles.productimage}>
         {products.map((item) => (
-          <Image
-            key={item.id}
-            style={{ display: 'flex' }}
-            src={item.product}
-            width={508}
-            height={472}
-            alt="apple product images"
-            priority={true} // {false} | {true}
-          />
+          <Link href={item.linkname}>
+            <Image
+              key={item.id}
+              style={{ display: 'flex' }}
+              src={item.product}
+              width={508}
+              height={472}
+              alt="apple product images"
+              priority={true} // {false} | {true}
+            />
+          </Link>
         ))}
       </main>
       <section>
